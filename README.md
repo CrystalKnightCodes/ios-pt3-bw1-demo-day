@@ -17,7 +17,7 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 ## Links (Add your links)
 
 * Code:  https://github.com/LambdaSchool/ios-pt3-bw1-medication-tracking-christy
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Project Kanban: https://github.com/LambdaSchool/ios-pt3-bw1-medication-tracking-christy/projects/1
 * Test Flight: `<insert beta signup link here>`
 * YouTube demo video: `<insert video url here>`
 
@@ -25,16 +25,27 @@ The video demo is for sharing your work on your portfolio, but it is also a fall
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+I enjoyed getting the pills to save to the pill list correctly.  I think it is neat to see the customized list of medications, and persistence is a new skill for me.
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-Getting the picker view in the Edit View Controller to select the existing value.  
-(Add how this was fixed once you figure it out.)
+Getting the picker view in the Edit View Controller to save the correct value.  
+I used an enum with an array in it to connect to picker to the correct values.
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+By conforming my enum to CaseIterable and adding the frequencies array, I was able to get my Frequency Picker View to display and save data correctly.  Thanks to Nate Hedgeman for helping me figure it out.
+   
+   enum Frequency: String, Codable, CaseIterable {
+        case twiceDaily = "Twice Daily"
+        case daily = "Daily"
+        case weekly = "Weekly"
+        case monthly = "Monthly"
+       
+        static var frequencies: [Frequency] {
+            return [.twiceDaily, .daily, .weekly, .monthly]
+        }
+    }
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
